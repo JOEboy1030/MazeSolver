@@ -16,8 +16,7 @@ public class Main {
         Element[][] maze = new MazeCreator(mazeSize.height(), mazeSize.width()).create();
         MazePainter.draw(maze);
 
-        // 経路探索
-        // 経路探索クラスのコンストラクタをここで呼び出しておく
+        //経路探索
         Element[][] mazeSolve = new MazeSolver(maze).solve();
         MazePainter.draw(mazeSolve);
     }
