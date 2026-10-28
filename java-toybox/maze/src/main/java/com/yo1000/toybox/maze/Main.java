@@ -13,7 +13,7 @@ public class Main {
         MazeSize mazeSize = size.get();
 
         // 迷路作成
-        Element[][] maze = new MazeCreator(mazeSize.height(), mazeSize.width()).create();
+        Element[][] maze = new MazeCreator(mazeSize).create();
         MazePainter.draw(maze);
 
         //経路探索

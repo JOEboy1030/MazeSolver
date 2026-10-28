@@ -24,6 +24,12 @@ public class MazeCreator {
         this.maze = new Element[height][width];
     }
 
+    public MazeCreator(MazeSize mazeSize) {
+        this.height = mazeSize.height();
+        this.width = mazeSize.width();
+        this.maze = new Element[height][width];
+    }
+
     public Element[][] create() {
         createOuterWall();
         createPillar();
@@ -80,9 +86,9 @@ public class MazeCreator {
                     maze[nx][ny] = Element.WALL;
                 }
             }
-            // スタート、ゴールの壁を開通
-            maze[1][0] = Element.PASSAGE;
-            maze[height - 2][width - 1] = Element.PASSAGE;
         }
+        // スタート、ゴールの壁を開通
+        maze[1][0] = Element.PASSAGE;
+        maze[height - 2][width - 1] = Element.PASSAGE;
     }
 }
